@@ -9,7 +9,7 @@ def call (){
     stage('sonar') {
          def scannerHome = tool 'sonar';
              withSonarQubeEnv('sonar') {
-                bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build -Dsonar.login=d4167fce436e669acff54aaa33d5b517ecf1f5eb"
+                bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
              }
     }
         stage('run') {
