@@ -3,7 +3,7 @@
 	def ejecucion = load 'script.groovy'
 	ejecucion.call()
 */
-def call(){
+def call (){
     stage('build'){
         bat 'mvnw.cmd clean compile -e'
     }
