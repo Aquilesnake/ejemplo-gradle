@@ -5,7 +5,7 @@ pipeline {
         stage('pipeline'){
             steps{
                 script{
-                    printIn 'herramienta seleccionada: ' + params.compilador
+                    echo 'herramienta seleccionada: ' + params.compilador
                     def pipe = load "${params.compilador}.groovy"
                     pipe.call()
                 }
