@@ -6,18 +6,19 @@ ejecucion.call()
 
 */
 def call (){
-    stage('build & test'){
+        stage('build & test'){
 			bat './gradlew clean build'
 	}
-					stage('sonar') {
-                        def scannerHome = tool 'sonar-scanner';
-                        withSonarQubeEnv('sonar') {
-                            bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build" 
-                         }                     
-                    }
-					stage('run'){
-						bat 'start gradlew bootRun &'
-					}
+    stage('sonar') {
+         def scannerHome = tool 'sonar';
+             withSonarQubeEnv('sonar') {
+                bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
+             }
+    }
+        stage('run') {
+            bat 'start gradlew bootRun &'
+            sleep 20
+        }
             stage('rest') {
             bat 'curl -X GET http://localhost:8082/rest/mscovid/test?msg=testing'
             }
