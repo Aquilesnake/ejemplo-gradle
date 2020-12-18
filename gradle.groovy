@@ -6,7 +6,7 @@ ejecucion.call()
 
 */
 def call (){
-        stag('build & test'){
+        stage('build & test'){
 			bat './gradlew clean build'
 	}
     stage('sonar') {
@@ -15,7 +15,7 @@ def call (){
                 bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
              }
     }
-        stage('ru') {
+        stage('run') {
             bat 'start gradlew bootRun &'
             sleep 20
         }
