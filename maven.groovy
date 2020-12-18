@@ -5,7 +5,7 @@
 */
 def call ()
 {
-    stage('build'){
+    stag('build'){
         bat 'mvnw.cmd clean compile -e'
     }
     stage('test'){
@@ -14,7 +14,7 @@ def call ()
     stage('Jar') {
         bat 'mvnw.cmd clean package -e'
     }
-     stage('sonar') {
+     stag('sonar') {
          def scannerHome = tool 'sonar';
             withSonarQubeEnv('sonar') {
             bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
