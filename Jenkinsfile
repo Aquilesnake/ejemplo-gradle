@@ -22,6 +22,5 @@ pipeline {
             }
 }
 
-}
 
 slackSend channel: 'U01DK54QSF6', color: 'good', message: 'ejecución exitosa', teamDomain: 'dipdevopsysach2020', tokenCredentialId: 'U01DK54QSF6'
