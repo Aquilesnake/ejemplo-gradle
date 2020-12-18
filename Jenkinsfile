@@ -14,12 +14,13 @@ pipeline {
     }
         post {
                 success {
-                    slackSend channel: 'U01DK54QSF6', color: 'good', message: 'Build Success: CristianTapia' + [env.JOB_NAME][params.compilador]+'Ejecución exitosa', teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'U01DK54QSF6'
+                   slackSend channel: 'U01DK54QSF6', color: 'good', message: "Build Success: [Cristian Tapia][${env.JOB_NAME}][${params.compilador}] Ejecución exitosa", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'U01DK54QSF6'
                    /* echo 'Build realizado con exito con los siguientes datos: Cristian Tapia' + [env.JOB_NAME][compilador]*/
                 }
                 failure {
-                    slackSend channel: 'U01DK54QSF6', color: 'red', message: 'Build Failure: CristianTapia' + [env.JOB_NAME][params.compilador]+'Ejecución fallida en stage'+[env.STAGE_NAME], teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'U01DK54QSF6'
+                    slackSend channel: 'U01DK54QSF6', color: 'red', message: "Build Failure: [Cristian Tapia][${env.JOB_NAME}][${params.compilador}] Ejecución fallida en stage [${env.STAGE_NAME}]", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'U01DK54QSF6'
                    /* echo 'Build realizado con fallas con los siguientes datos: Cristian Tapia' + [env.JOB_NAME][compilador][env.STAGE_NAME]*/
                 }
         }
 }
+
