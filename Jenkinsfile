@@ -14,10 +14,10 @@ pipeline {
     }
         post {
                 success {
-                    echo 'Build realizado con exito con los siguientes datos:' + [CHANGE_AUTHOR][JOB_NAME][compilador]
+                    echo 'Build realizado con exito con los siguientes datos:' + ['CristianTapia'][JOB_NAME][compilador]
                 }
                 failure {
-                    echo 'Build realizado con fallas con los siguientes datos:' +[CHANGE_AUTHOR][JOB_NAME][compilador][env.STAGE_NAME]
+                    echo 'Build realizado con fallas con los siguientes datos:' +['CristianTapia'][JOB_NAME][compilador][env.STAGE_NAME]
                 }
             }
 }
