@@ -5,8 +5,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.springframework.boot' version '2.3.3.RELEASE'
-    id "org.sonarqube" version "2.7"
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
 }
 
 repositories {
@@ -29,7 +28,7 @@ description = 'DevOpsUsach2020'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 test {
- useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 publishing {
